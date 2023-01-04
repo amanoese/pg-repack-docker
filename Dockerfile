@@ -1,6 +1,6 @@
 FROM ubuntu:18.10
 
-RUN sed -i -r 's@http://(archive|security).ubuntu.com@http://old-releases.ubuntu.com@g' /etc/apt/sources.list
+RUN sed -ri 's@http://(archive|security).ubuntu.com@http://old-releases.ubuntu.com@g' /etc/apt/sources.list
 RUN apt-get update &&  \
     apt-get install -y \
     build-essential libssl-dev zlib1g-dev wget unzip \
